@@ -138,7 +138,7 @@ function sendTransaction(isAdding) {
   .catch(err => {
     // fetch failed, so save in indexed db
     if (checkForIndexedDb) {
-      useIndexedDb("budget", "PendingTransactions", "put", transaction)
+      useIndexedDb("budget", "PendingTransactions", "post", transaction)
       .then((res) => {
         console.log(res);
       });
